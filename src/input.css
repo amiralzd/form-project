@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+body{
+    font-family: system-ui;
+}
+
 .fontstyletitr{
     color: #000000;
     font-family: system-ui;
@@ -32,7 +36,7 @@
     text-align: right;
 
     /* text style */
-    font-family: Yekan Bakh NoEn;
+    /* font-family: Yekan Bakh NoEn; */
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -59,7 +63,7 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
     font-size: 18px;
-    font-family: Yekan Bakh NoEn;
+    /* font-family: Yekan Bakh NoEn; */
     text-align: center;
     padding-top: 6px;
     /* position: absolute;
@@ -81,7 +85,7 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
     font-size: 18px;
-    font-family: Yekan Bakh NoEn;
+    /* font-family: Yekan Bakh NoEn; */
     text-align: center;
     margin-top: 20px;
     padding-top: 6px;
@@ -116,7 +120,7 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
     font-size: 18px;
-    font-family: Yekan Bakh NoEn;
+    /* font-family: Yekan Bakh NoEn; */
     text-align: center;
     padding-top: 6px;
 }
