@@ -5,8 +5,8 @@
 
 .fontstyletitr{
     color: #000000;
-    font-family: Yekan Bakh;
-    font-size: 40px;
+    font-family: system-ui;
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -15,11 +15,11 @@
 }
 
 .fontstylelable{
-    color: var(--purpple, #9365f8);
+    color: #000000;
     text-align: right;
 
     /* text header */
-    font-family: Yekan Bakh FaNum;
+    font-family: system-ui;
     font-size: 17px;
     font-style: normal;
     font-weight: 700;
@@ -33,7 +33,7 @@
 
     /* text style */
     font-family: Yekan Bakh NoEn;
-    font-size: 10px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 400;
     line-height: 201.9%; /* 52.494px */
@@ -43,6 +43,7 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     border: none;
     padding-right: 20px;
+    padding-left: ;
     display: block;
 }
 
@@ -54,7 +55,6 @@
     width: 120px;
     height: 40px;
     border-radius: 10px;
-    margin-top: 20px;
     margin-right: 240px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
@@ -62,9 +62,32 @@
     font-family: Yekan Bakh NoEn;
     text-align: center;
     padding-top: 6px;
+    /* position: absolute;
+    right: 220px; */
 }
 
 #submit:hover{
+    background: #290d64;
+}
+
+#submitfirst{
+    cursor: pointer;
+    background: #734BC7;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 240px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition: 1s all ease;
+    font-size: 18px;
+    font-family: Yekan Bakh NoEn;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 6px;
+}
+
+#submitfirst:hover{
     background: #290d64;
 }
 
@@ -81,4 +104,35 @@
     background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+#back{
+    cursor: pointer;
+    background: #734BC7;
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 240px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    transition: 1s all ease;
+    font-size: 18px;
+    font-family: Yekan Bakh NoEn;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#back:hover{
+    background: #290d64;
+}
+
+
+.bgform{
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
