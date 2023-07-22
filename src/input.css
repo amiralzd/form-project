@@ -59,7 +59,7 @@ body{
     width: 120px;
     height: 40px;
     border-radius: 10px;
-    margin-right: 240px;
+    /* margin-right: 240px; */
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
     font-size: 18px;
@@ -68,6 +68,8 @@ body{
     padding-top: 6px;
     /* position: absolute;
     right: 220px; */
+    
+    margin-left: auto;
 }
 
 #submit:hover{
@@ -81,13 +83,12 @@ body{
     width: 120px;
     height: 40px;
     border-radius: 10px;
-    margin-right: 240px;
+    
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     transition: 1s all ease;
     font-size: 18px;
     /* font-family: Yekan Bakh NoEn; */
     text-align: center;
-    margin-top: 20px;
     padding-top: 6px;
 }
 
