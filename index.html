@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="src/input.css">
     <link rel="stylesheet" href="dist/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
     <script>
         tailwind.config = {
           theme: {
@@ -20,56 +21,242 @@
     </script>
 
     <script src="https://kit.fontawesome.com/cb5095bf42.js" crossorigin="anonymous"></script>
+    <link rel="website icon" type="png" href="img/download.jpg">
 </head>
-<body class="w-full h-[500px] bgstyle">
-    <div class="w-[50%] h-[310px] bgform rounded-[10px] m-auto mt-[180px] bxsh max-sm:w-[80%] max-sm:mt-[160px]">
-        <div class="w-[80%] h-[50px] fontstyletitr m-auto text-center max-sm:text-[25px]">اطلاعات ورودی</div>
-        <div class="w-[90%] h-[1px] bgbr m-auto"></div>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+        background: #006466;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0b525b, #006466);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0b525b, #006466); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    
+    #regForm {
+      background-color: #ffffff;
+      margin: 100px auto;
+      font-family: Raleway;
+      padding: 40px;
+      width: 50%;
+      min-width: 300px;
 
-        <div class="w-[80%] h-[250px] m-auto">
-            <form action="" class="text-right">
-                <label for="" class="fontstylelable mr-[18px] mt-[10px]">نام و نام خانوادگی</label>
-                <input type="text" name="name" id="name" class="fontstyleinput text-right" placeholder="نام خود را وارد کنید ">
+      /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    h1 {
+      text-align: center;  
+    }
+    
+    input {
+        color: #000;
+        text-align: right;
 
-                <label for="" class="fontstylelable mr-[18px] mt-[10px]">شماره موبایل</label>
-                <input type="number" name="name" id="name" class="fontstyleinput text-right" placeholder="شماره خود را وارد کنید">
+        /* text style */
+        /* font-family: Yekan Bakh NoEn; */
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 201.9%; /* 52.494px */
+        width: 100%;
+        height: 50px;
+        border-radius: 10px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border: none;
+        display: block;
+    }
 
-                
-            </form>
-            <div class="w-full h-[40px] mt-[20px] items-center flex justify-center max-sm:w-full">
-                <a href="index2.html" type="submit" name="submit" id="submitfirst">مرحله بعد</a>
-            </div>
+    input{outline: none;}
+    
+    /* Mark input boxes that gets an error on validation: */
+    input.invalid {
+      background-color: #ffdddd;
+    }
+    
+    /* Hide all steps by default: */
+    .tab {
+      display: none;
+    }
+    
+    button {
+      background-color: #04AA6D;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 17px;
+      font-family: Raleway;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    #prevBtn {
+      background-color: #bbbbbb;
+    }
+    
+    /* Make circles that indicate the steps of the form: */
+    .step {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbbbbb;
+      border: none;  
+      border-radius: 50%;
+      display: inline-block;
+      opacity: 0.5;
+    }
+    
+    .step.active {
+      opacity: 1;
+    }
+    
+    /* Mark the steps that are finished and valid: */
+    .step.finish {
+      background-color: #04AA6D;
+    }
+    </style>
 
+
+
+
+
+<body>
+    
+    <form id="regForm" action="/action_page.php">
+      <h1 class="fontstyletitr">اطلاعات مربوطه را وارد کنید</h1>
+      <div class="w-[90%] h-[1px] bgbr m-auto"></div>
+      <!-- One "tab" for each step in the form: -->
+      <div class="tab">
+        <p><label class="fontstylelable mt-[10px]" for="">نام و نام خانوادگی :</label></p>
+        <p><input placeholder="نام خود را کامل وارد کنید" oninput="this.className = ''" class="pr-[10px]" name="name"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">شماره تلفن :</label></p>
+        <p><input placeholder="شماره خود را وارد کنید" type="number" class="pr-[10px]" oninput="this.className = ''" name="phone"></p>
+      </div>
+      <div class="tab">
+        <p><label class="fontstylelable mt-[10px]" for="">نام سایت</label></p>
+        <p><input class="pr-[10px]" placeholder="نام سایت خود را وارد کنید" oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">URL</label></p>
+        <p><input class="pr-[10px]" placeholder="نام سایت خود را وارد کنید" oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">اطلاعات مربوط به بیزنس،شرکت،کمپانی</label></p>
+        <p><input class="pr-[10px]" placeholder="در این قسمت باید توضیح دهید در چه حوزه هایی فعالیت دارید و هدف شما از ایجاد این سایت چیست و چه انتظاری از ما دارید" oninput="this.className = ''" name="text"></p>
+      </div>
+      <div class="tab">
+        <p><label class="fontstylelable mt-[10px]" for="">  usp شما چیست؟ (پیشنهاد فروش منحصر به فرد)</label></p>
+        <p><input class="pr-[10px]" placeholder="چه ویژگی های سایت شما دارد که شمارا از بقیه رقبا متفاوت میکند " oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">مخاطب هدف شما چه کسانی هستند ؟ </label></p>
+        <p><input class="pr-[10px]" placeholder="محدوده سنی مخاطبان شما چیست ؟ 
+            جنسیت مخاطب شما چیست ؟ " oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">آیا این یک طراحی مجدد وب سایت است یا سایت از صفر طراحی میشود ؟</label></p>
+        <p><input class="pr-[10px]" placeholder="آیا میخواهید سایت شما باز طراحی شود  یا از ابتدا طراحی شود " oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">سایت هایی که دوست دارید یا در حوزه شما فعالیت دارند را معرفی کنید ؟</label></p>
+        <p><input class="pr-[10px]" placeholder="مثال : digikala.com" oninput="this.className = ''" name="text"></p>
+      </div>
+      <div class="tab">
+        <p><label class="fontstylelable mt-[10px]" for=""> تم رنگی مورد نظر خود را بیان کنید . </label></p>
+        <p><input class="pr-[10px]" placeholder="بهتر است این قسمت را به تیم ما بسپارید" oninput="this.className = ''" name="text"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">تایپوگرافی / تنظیمات فونت مورد نظر خود را بیان کنید .  </label></p>
+        <p><input class="pr-[10px]" placeholder="بهتر است این قسمت را به تیم ما بسپارید" oninput="this.className = ''" name="text" type="password"></p>
+        <p><label class="fontstylelable mt-[10px]" for="">اگر ایده یا نظری دارید بیان کنید .</label></p>
+        <p><input class="pr-[10px]" placeholder="در این قسمت میتوانید ایده ها و نظرات خود را بیان کنید " oninput="this.className = ''" name="text"></p>
+      </div>
+      <div style="overflow:auto;">
+        <div style="float:right;">
+            <button type="button" id="nextBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(1)">Next</button>
+          <button type="button" id="prevBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(-1)">Previous</button>
         </div>
-    </div>
-
-    <div class="w-[50%] h-[50px] m-auto items-center flex pr-[5px] pl-[5px] rounded-[10px] mt-[5px] bxsh bgform max-sm:w-[80%] max-sm:pl-[60px]">
-        <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-            <li class="flex md:w-full items-center text-emerald-800 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 mr-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span>ورود</span>
-                </span>
-            </li>
-            <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="mr-2">2</span>
-                    <span>بیزینس</span>
-                </span>
-            </li>
-            <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="mr-2">3</span>
-                    <span>شرکت</span>
-                </span>
-            </li>
-            <li class="flex items-center">
-                <span class="mr-2">3</span>
-                <span>طرح</span>
-            </li>
-        </ol>
-    </div>
-</body>
+      </div>
+      <!-- Circles which indicates the steps of the form: -->
+      <div style="text-align:center;margin-top:40px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+      </div>
+    </form>
+       
+    <script>
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+    
+    function showTab(n) {
+      // This function will display the specified tab of the form...
+      var x = document.getElementsByClassName("tab");
+      x[n].style.display = "block";
+      //... and fix the Previous/Next buttons:
+      if (n == 0) {
+        document.getElementById("prevBtn").style.display = "none";
+      } else {
+        document.getElementById("prevBtn").style.display = "inline";
+      }
+      if (n == (x.length - 1)) {
+        document.getElementById("nextBtn").innerHTML = "Submit";
+      } else {
+        document.getElementById("nextBtn").innerHTML = "Next";
+      }
+      //... and run a function that will display the correct step indicator:
+      fixStepIndicator(n)
+    }
+    
+    function nextPrev(n) {
+      // This function will figure out which tab to display
+      var x = document.getElementsByClassName("tab");
+      // Exit the function if any field in the current tab is invalid:
+      if (n == 1 && !validateForm()) return false;
+      // Hide the current tab:
+      x[currentTab].style.display = "none";
+      // Increase or decrease the current tab by 1:
+      currentTab = currentTab + n;
+      // if you have reached the end of the form...
+      if (currentTab >= x.length) {
+        // ... the form gets submitted:
+        document.getElementById("regForm").submit();
+        return false;
+      }
+      // Otherwise, display the correct tab:
+      showTab(currentTab);
+    }
+    
+    function validateForm() {
+      // This function deals with validation of the form fields
+      var x, y, i, valid = true;
+      x = document.getElementsByClassName("tab");
+      y = x[currentTab].getElementsByTagName("input");
+      // A loop that checks every input field in the current tab:
+      for (i = 0; i < y.length; i++) {
+        // If a field is empty...
+        if (y[i].value == "") {
+          // add an "invalid" class to the field:
+          y[i].className += " invalid";
+          // and set the current valid status to false
+          valid = false;
+        }
+      }
+      // If the valid status is true, mark the step as finished and valid:
+      if (valid) {
+        document.getElementsByClassName("step")[currentTab].className += " finish";
+      }
+      return valid; // return the valid status
+    }
+    
+    function fixStepIndicator(n) {
+      // This function removes the "active" class of all steps...
+      var i, x = document.getElementsByClassName("step");
+      for (i = 0; i < x.length; i++) {
+        x[i].className = x[i].className.replace(" active", "");
+      }
+      //... and adds the "active" class on the current step:
+      x[n].className += " active";
+    }
+    </script>
+    
+    </body>
 </html>
