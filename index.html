@@ -38,8 +38,8 @@
       background-color: #ffffff;
       margin: 100px auto;
       font-family: Raleway;
-      padding: 40px;
-      width: 50%;
+      padding: 20px;
+      width: 100%;
       min-width: 300px;
 
       /* From https://css.glass */
@@ -170,8 +170,8 @@
       </div>
       <div style="overflow:auto;">
         <div style="float:right;">
-            <button type="button" id="nextBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(1)">Next</button>
-          <button type="button" id="prevBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(1)">بعدی</button>
+          <button type="button" id="prevBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(-1)">قبلی</button>
         </div>
       </div>
       <!-- Circles which indicates the steps of the form: -->
@@ -198,9 +198,9 @@
         document.getElementById("prevBtn").style.display = "inline";
       }
       if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
+        document.getElementById("nextBtn").innerHTML = "ثبت";
       } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
+        document.getElementById("nextBtn").innerHTML = "بعدی";
       }
       //... and run a function that will display the correct step indicator:
       fixStepIndicator(n)
