@@ -26,6 +26,8 @@
 <style>
     * {
       box-sizing: border-box;
+      font-family: Yekan Bakh NoEn!important;
+
     }
     
     body {
@@ -38,8 +40,8 @@
       background-color: #ffffff;
       margin: 100px auto;
       font-family: Raleway;
-      padding: 20px;
-      width: 100%;
+      padding: 40px;
+      /* width: 50%; */
       min-width: 300px;
 
       /* From https://css.glass */
@@ -71,6 +73,7 @@
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         border: none;
         display: block;
+        padding: 0 10px!important;
     }
 
     input{outline: none;}
@@ -131,7 +134,7 @@
 
 <body>
     
-    <form id="regForm" action="/action_page.php">
+    <form id="regForm" action="/action_page.php" class="w-[50%] max-sm:w-full">
       <h1 class="fontstyletitr">اطلاعات مربوطه را وارد کنید</h1>
       <div class="w-[90%] h-[1px] bgbr m-auto"></div>
       <!-- One "tab" for each step in the form: -->
@@ -164,14 +167,14 @@
         <p><label class="fontstylelable mt-[10px]" for=""> تم رنگی مورد نظر خود را بیان کنید . </label></p>
         <p><input class="pr-[10px]" placeholder="بهتر است این قسمت را به تیم ما بسپارید" oninput="this.className = ''" name="text"></p>
         <p><label class="fontstylelable mt-[10px]" for="">تایپوگرافی / تنظیمات فونت مورد نظر خود را بیان کنید .  </label></p>
-        <p><input class="pr-[10px]" placeholder="بهتر است این قسمت را به تیم ما بسپارید" oninput="this.className = ''" name="text" type="password"></p>
+        <p><input class="pr-[10px]" placeholder="بهتر است این قسمت را به تیم ما بسپارید" oninput="this.className = ''" name="text"></p>
         <p><label class="fontstylelable mt-[10px]" for="">اگر ایده یا نظری دارید بیان کنید .</label></p>
         <p><input class="pr-[10px]" placeholder="در این قسمت میتوانید ایده ها و نظرات خود را بیان کنید " oninput="this.className = ''" name="text"></p>
       </div>
       <div style="overflow:auto;">
         <div style="float:right;">
-            <button type="button" id="nextBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(1)">بعدی</button>
           <button type="button" id="prevBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(-1)">قبلی</button>
+          <button type="button" id="nextBtn" class="bg-[#04AA6D] text-[#fff] border-none text-[17px] font-[Raleway] pt-[5px] pb-[5px] pl-[20px] pr-[20px] rounded-[10px] mt-[20px]" onclick="nextPrev(1)">بعدی</button>
         </div>
       </div>
       <!-- Circles which indicates the steps of the form: -->
